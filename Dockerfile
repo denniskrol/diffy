@@ -30,5 +30,5 @@ RUN npm run-script build
 
 
 # By default expose port 3000 and run `node /diffy/src/app.js` when executing the image
-EXPOSE 3000
+EXPOSE 3000/tcp
 CMD ["npm", "start"]

@@ -1,16 +1,43 @@
-version: "2"
 services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodb
+    volumes:
+      - diffy-mongodb-data:/data/db/
+      - diffy-mongodb-log:/var/log/mongodb/
+    restart: "always"
+    environment:
+      MONGO_INITDB_DATABASE: diffy
+    ports:
+      - "27017:27017"
+    networks:
+      - diffy_network
+
   web:
     build:
       context: .
       dockerfile: Dockerfile
     image: diffy
     ports:
-      - 3000:3000
+      - '3000:3000'
+    networks:
+      - diffy_network
     volumes:
       - ./:/diffy
     environment:
       - DIFFY_WEB_HOST=0.0.0.0
       - DIFFY_GA_ANALYTICS_KEY=none
     stop_signal: SIGINT
+    depends_on:
+      - mongodb
 
+volumes:
+  diffy-mongodb-data:
+    driver: local
+  diffy-mongodb-log:
+    driver: local
+
+networks:
+  diffy_network:
+    driver: bridge
