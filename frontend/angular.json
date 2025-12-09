@@ -56,18 +56,17 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngdiffy:build"
+            "buildTarget": "ngdiffy:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngdiffy:build:production"
+              "buildTarget": "ngdiffy:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngdiffy:build"
           }
         },
         "test": {
@@ -130,7 +129,6 @@
       }
     }
   },
-  "defaultProject": "ngdiffy",
   "cli": {
     "analytics": false
   }

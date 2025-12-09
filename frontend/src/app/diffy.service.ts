@@ -20,7 +20,7 @@ export class DiffyService {
     };
   }
 
-  private buildError(httpError): Error {
+  private buildError(httpError: { status: number; error: { error: any; }; }): Error {
     if (httpError.status >= 500) {
       return {type: 'SERVER_ERROR', text: 'Oops, something broke on the server :-/'};
     }
@@ -86,7 +86,7 @@ export class DiffyService {
       rawDiff: raw_diff,
     };
   }
-  
+
   private makeSharedDiffFromJson(diffyObj): SharedDiff {
     let sharedDiff = this.makeSharedDiff(diffyObj.rawDiff, new Date(diffyObj.created));
     sharedDiff.expiresAt = new Date(diffyObj.expiresAt);

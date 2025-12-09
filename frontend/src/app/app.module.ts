@@ -18,6 +18,13 @@ import {EscapeHtmlPipe} from './pipes/keep-html.pipe';
 
 @NgModule({
   declarations: [
+
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
     AppComponent,
     DiffDetailComponent,
     HomePageComponent,
@@ -27,12 +34,6 @@ import {EscapeHtmlPipe} from './pipes/keep-html.pipe';
     DiffDetailNavComponent,
     DiffDetailCountdownComponent,
     HighlightComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

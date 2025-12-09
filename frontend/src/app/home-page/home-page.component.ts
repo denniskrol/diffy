@@ -7,10 +7,16 @@ import { AlertService } from '../alert.service';
 import { AnalyticsService } from '../analytics.service';
 import { DiffyService } from '../diffy.service';
 import { Error } from '../types/Error';
+import {FormsModule} from "@angular/forms";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
+  imports: [
+    FormsModule,
+    NgClass
+  ],
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {

@@ -10,16 +10,20 @@ thing you'll need is mongodb. To get you started these are the steps:
 1. Install Node.js and NPM
 2. Install MongoDB and make it listen on localhost with default port
 3. Clone the repo: `git clone https://github.com/pbu88/diffy.git`
-4. Install and build frontend code (AngularJS app)
-    * `cd diffy/frontend`
+4. Install and build models
+   * `cd models`
+   * `npm install`
+   * `npm run-script build`
+5. Install and build frontend code (AngularJS app)
+    * `cd frontend`
     * `npm install`
     * `ng build`
-5. Install and build backend code (Typescript)
-    * `cd diff/backend/`
+6. Install and build backend code (Typescript)
+    * `cd backend`
     * `npm install`
     * `npm run build`
     * `npm test`
-7. Run it: `DIFFY_GA_ANALYTICS_KEY=none npm run v2_start`
+7. Run it: `DIFFY_GA_ANALYTICS_KEY=none npm run start`
 
 ### Docker
 
